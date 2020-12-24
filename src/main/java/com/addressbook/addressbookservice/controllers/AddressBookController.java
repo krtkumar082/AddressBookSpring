@@ -1,4 +1,4 @@
-package com.addressbook.addressbookbservice.controllers;
+package com.addressbook.addressbookservice.controllers;
 
 import java.util.List;
 
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.addressbook.addressbookbservice.dto.AddressBookDTO;
-import com.addressbook.addressbookbservice.dto.ResponseDTO;
-import com.addressbook.addressbookbservice.model.AddressBookData;
-import com.addressbook.addressbookbservice.service.IAddressBookService;
+import com.addressbook.addressbookservice.dto.AddressBookDTO;
+import com.addressbook.addressbookservice.dto.ResponseDTO;
+import com.addressbook.addressbookservice.model.AddressBookData;
+import com.addressbook.addressbookservice.service.IAddressBookService;
 
 @RestController
 @RequestMapping("/addressbookservice")

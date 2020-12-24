@@ -1,6 +1,6 @@
-package com.addressbook.addressbookbservice.model;
+package com.addressbook.addressbookservice.model;
 
-import com.addressbook.addressbookbservice.dto.AddressBookDTO;
+import com.addressbook.addressbookservice.dto.AddressBookDTO;
 
 public class AddressBookData {
 	private Long id;

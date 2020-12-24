@@ -1,12 +1,12 @@
-package com.addressbook.addressbookbservice.service;
+package com.addressbook.addressbookservice.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.addressbook.addressbookbservice.dto.AddressBookDTO;
-import com.addressbook.addressbookbservice.model.AddressBookData;
+import com.addressbook.addressbookservice.dto.AddressBookDTO;
+import com.addressbook.addressbookservice.model.AddressBookData;
 
 
 @Service
