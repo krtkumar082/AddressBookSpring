@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.addressbook.addressbookservice.dto.AddressBookDTO;
+import com.addressbook.addressbookservice.exceptions.AddressBookException;
 import com.addressbook.addressbookservice.model.AddressBookData;
 
 
@@ -21,7 +22,8 @@ public class AddressBookService implements IAddressBookService{
 
 	@Override
 	public AddressBookData getAddressBookDataById(long contactId) {
-		return contactList.get((int) (contactId-1));
+		return contactList.stream().filter(obj->obj.getId()==contactId)
+                .findFirst().orElseThrow(()-> new AddressBookException("Contact Not Found"));
 	}
 
 	@Override
@@ -35,20 +37,19 @@ public class AddressBookService implements IAddressBookService{
 	@Override
 	public AddressBookData updateAddressBookData(long contactId,AddressBookDTO addressBookDTO) {
 		AddressBookData contact = this.getAddressBookDataById(contactId);
-		contact.setFirstName(addressBookDTO.firstName);
-		contact.setLastName(addressBookDTO.lastName);
-		contact.setAddress(addressBookDTO.address);
-		contact.setCity(addressBookDTO.city);
-		contact.setState(addressBookDTO.state);
-		contact.setZip(addressBookDTO.zip);
-		contact.setPhoneNumber(addressBookDTO.phoneNumber);
-		contact.setEmail(addressBookDTO.email);
+		contact.setFullName(addressBookDTO.getFullName());
+		contact.setAddress(addressBookDTO.getAddress());
+		contact.setCity(addressBookDTO.getCity());
+		contact.setState(addressBookDTO.getState());
+		contact.setZip(addressBookDTO.getZip());
+		contact.setPhoneNumber(addressBookDTO.getPhoneNumber());
 		contactList.set((int) (contactId - 1), contact);
 		return contact;
 	}
 
 	@Override
 	public void deleteAddressBookData(long contactId) {
+		AddressBookData contact = this.getAddressBookDataById(contactId);
 		contactList.remove(contactId-1);
 		
 	}
