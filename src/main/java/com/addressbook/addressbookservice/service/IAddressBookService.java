@@ -1,9 +1,9 @@
-package com.addressbook.addressbookbservice.service;
+package com.addressbook.addressbookservice.service;
 
 import java.util.List;
 
-import com.addressbook.addressbookbservice.dto.AddressBookDTO;
-import com.addressbook.addressbookbservice.model.AddressBookData;
+import com.addressbook.addressbookservice.dto.AddressBookDTO;
+import com.addressbook.addressbookservice.model.AddressBookData;
 
 
 public interface IAddressBookService {
